@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &Image {
+    margin-right: 16px;
+  }
+  &Text {
+    h3 {
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      color: #9d9d9d;
+    }
+  }
+}
+.utils {
+  display: flex;
+  align-items: center;
+}
+.like {
+  margin: 0 30px;
+}
+.basket {
+  margin-right: 10px;
+}

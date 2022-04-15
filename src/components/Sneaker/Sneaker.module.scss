@@ -1,0 +1,41 @@
+.sneaker {
+  max-width: 210px;
+  padding: 20px 28px;
+  border: 1px solid #f3f3f3;
+  border-radius: 40px;
+  transition: all 0.2s ease-in-out;
+
+  &Description {
+    margin: 14px 0;
+  }
+  &Buy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &Price {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 11px;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+    }
+  }
+
+  &Add {
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+  }
+
+  &:hover {
+    box-shadow: 0 15px 20px rgb(0, 0, 0, 0.1);
+    border: 1px solid #f8f8f8;
+    transform: translateY(-12px);
+  }
+}
+.liked {
+  position: absolute;
+  cursor: pointer;
+}

@@ -1,29 +1,33 @@
+import styles from "./BasketSection.module.scss";
+
+console.log(styles.basketSection);
+
 function BasketSection() {
   return (
-    <div style={{ display: "none" }} className="basket-section">
+    <div className={styles.basketSection}>
       <h2>Корзина</h2>
-      <div className="cart-items">
-        <div className="cart-item">
+      <div className={styles.cartItems}>
+        <div className={styles.cartItem}>
           <img
             width={70}
             height={70}
             src="/assets/sneakers/1.jpg"
             alt="First sneaker"
           />
-          <div className="cart-item__description">
+          <div className={styles.cartItemDescription}>
             <p>Мужские Кроссовки Nike Air Max 270</p>
             <strong>12 999 руб.</strong>
           </div>
           <img
             src="/assets/remove.svg"
             alt="Remove item"
-            className="remove-btn"
+            className={styles.removeBtn}
           />
         </div>
       </div>
 
-      <div className="order-section">
-        <ul className="total-price">
+      <div className={styles.orderSection}>
+        <ul>
           <li>
             <span>Итого: </span>
             <div></div>
