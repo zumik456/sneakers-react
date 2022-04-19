@@ -5,6 +5,10 @@
   border-radius: 40px;
   transition: all 0.2s ease-in-out;
 
+  img {
+    cursor: pointer;
+  }
+
   &Description {
     margin: 14px 0;
   }

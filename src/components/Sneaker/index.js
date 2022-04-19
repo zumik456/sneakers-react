@@ -1,25 +1,54 @@
+import React from "react";
 import styles from "./Sneaker.module.scss";
 
-function Sneaker({ name, price, imageIndex }) {
+function Sneaker({
+  id,
+  title,
+  price,
+  onAddBasket,
+  onRemoveBasket,
+  onAddLiked,
+  onRemoveLiked,
+}) {
+  const [isAdded, setIsAdded] = React.useState(false);
+  const [isLiked, setIsLiked] = React.useState(false);
+
+  const toggleAddRemoveBasket = () => {
+    setIsAdded(!isAdded);
+    isAdded ? onRemoveBasket(id) : onAddBasket({ id, title, price });
+  };
+
+  const toggleAddRemoveLiked = () => {
+    setIsLiked(!isLiked);
+    isLiked ? onRemoveLiked(id) : onAddLiked({ id, title, price });
+  };
+
   return (
     <div className={styles.sneaker}>
-      <img src="/assets/liked.svg" alt="Liked" className={styles.liked} />
       <img
-        src={`/assets/sneakers/${imageIndex}.jpg`}
-        alt=""
-        className="sneaker__image"
+        src={`/assets/${isLiked ? "liked" : "unliked"}.svg`}
+        alt="Liked"
+        classtitle={styles.liked}
+        onClick={toggleAddRemoveLiked}
+      />
+      <img
+        src={`/assets/sneakers/${id}.jpg`}
+        alt="Sneaker"
         width={133}
         height={112}
       />
-      <p className={styles.sneakerDescription}>{name}</p>
-      <div className="sneaker__buy">
+      <p className={styles.sneakerDescription}>{title}</p>
+      <div className={styles.sneakerBuy}>
         <div className={styles.sneakerPrice}>
           <span>Цена:</span>
           <strong>{price} руб.</strong>
         </div>
-        <button className={styles.sneakerAdd}>
-          <img src="/assets/add.svg" alt="Add sneaker to basket" />
-        </button>
+        <img
+          className={styles.sneakerAdd}
+          src={`/assets/${isAdded ? "added" : "add"}.svg`}
+          alt="Add sneaker to basket"
+          onClick={toggleAddRemoveBasket}
+        />
       </div>
     </div>
   );

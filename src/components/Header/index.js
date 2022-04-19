@@ -1,32 +1,35 @@
 import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ onClickBasket }) {
   return (
     <header>
-      <div className={styles.logo}>
-        <img
-          src="/assets/logo.svg"
-          alt="Sneakers logo"
-          className={styles.logoImage}
-        />
-        <div className={styles.logoText}>
-          <h3>React Sneakers</h3>
-          <p>Магазин лучших кроссовок</p>
+      <Link to="/">
+        <div className={styles.logo}>
+          <img
+            src="/assets/logo.svg"
+            alt="Sneakers logo"
+            className={styles.logoImage}
+          />
+          <div className={styles.logoText}>
+            <h3>React Sneakers</h3>
+            <p>Магазин лучших кроссовок</p>
+          </div>
         </div>
-      </div>
+      </Link>
       <ul className={styles.utils}>
-        <li>
+        <li className={styles.utilsAmount} onClick={onClickBasket}>
           <img
             src="/assets/basket.svg"
             alt="Basket"
             className={styles.basket}
           />
-        </li>
-        <li>
           <span>1205 руб.</span>
         </li>
         <li>
-          <img src="/assets/like.svg" alt="Like" className={styles.like} />
+          <Link to="/favorites">
+            <img src="/assets/like.svg" alt="Like" className={styles.like} />
+          </Link>
         </li>
         <ul>
           <img src="/assets/profile.svg" alt="Profile" />

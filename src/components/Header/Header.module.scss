@@ -31,6 +31,12 @@ header {
 .utils {
   display: flex;
   align-items: center;
+
+  &Amount {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
 }
 .like {
   margin: 0 30px;
